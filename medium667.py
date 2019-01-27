@@ -60,7 +60,7 @@ class Solution:
     #     print(list)
     #     return max(re,1)
     #
-    #第四次领会错误，abbbcb是B因为可以忽略c,同理cbdxdvbc是因为可以忽略很多，https://www.youtube.com/watch?v=_nCsPn7_OgI看了这个视频，学会DP的思想
+    #第四次领会错误，abbbcb是4因为可以忽略c,同理cbdxdvbc是因为可以忽略很多，https://www.youtube.com/watch?v=_nCsPn7_OgI看了这个视频，学会DP的思想
     def longestPalindromeSubseq(s):
         # write your code here
         if not s:
