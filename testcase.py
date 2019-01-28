@@ -33,9 +33,12 @@
 #
 # print(fabdp(10))
 
-s = "abcdef"
-print(s.find("b"))
-print(s[0:s.find("b")])
-s = s[0:s.find("b")]+"!"+s[s.find("b")+1:]
+# s = "abcdef"
+# print(s.find("b"))
+# print(s[0:s.find("b")])
+# s = s[0:s.find("b")]+"!"+s[s.find("b")+1:]
+#
+# print(s)
 
-print(s)
+re = [[1]] * 5
+print(re)
