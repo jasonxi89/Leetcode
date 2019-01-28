@@ -34,6 +34,7 @@
 # print(fabdp(10))
 
 s = "abcdef"
+print(s.find("b"))
 print(s[0:s.find("b")])
 s = s[0:s.find("b")]+"!"+s[s.find("b")+1:]
 
