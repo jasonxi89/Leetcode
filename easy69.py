@@ -5,7 +5,7 @@ class TreeNode:
         self.val = val
         self.left, self.right = None, None
 """
-import deque
+from collections import deque
 
 class Solution:
     """
@@ -38,16 +38,16 @@ class Solution:
         # write your code here
         if root is None:
             return []
-        queen = deque([root])
+        queue = deque([root])
         result = []
-        while queen:
+        while queue:
             level = []
-            for _ in range(len(queen)):
-                node = queen.popleft()
+            for _ in range(len(queue)):
+                node = queue.popleft()
                 level.append(node.val)
                 if node.left:
-                    queen.popleft(node.left)
+                    queue.append(node.left)
                 if node.right:
-                    queen.popleft(node.right)
+                    queue.append(node.right)
             result.append(level)
         return result
