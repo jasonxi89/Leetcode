@@ -41,4 +41,5 @@
 # print(s)
 
 re = [[1]] * 5
-print(re)
+print(1 <= 1 < 3)
+
