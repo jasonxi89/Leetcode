@@ -43,3 +43,6 @@
 re = [[1]] * 5
 print(1 <= 1 < 3)
 
+n = 10
+dic = {n:0 for n in range(n)}
+print(dic)
