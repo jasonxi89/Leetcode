@@ -28,3 +28,4 @@ class Solution:
     def numIslands2(self, n, m, operators):
         # write your code here
         #好的 不会做
+        pass
