@@ -58,16 +58,23 @@ class Solution:
     """
 
     def maxPathSum(self, root):
-        maxSum, _ = self.maxPathHelper(root)
-        return maxSum
+        #maxpath记录路上最大的值
+        # maxPath = - sys.maxsize
+        _ , maxPath= self.helper(root)
+        return maxPath
 
-    def maxPathHelper(self, root):
+    def helper(self,root):
+        #返回值第一个值为当前值，第二个值位路径最大值
         if root is None:
-            return -sys.maxsize, 0
+            return 0, - sys.maxsize
+        #left/right均为数组，0位置是当经过点的最大值，1位置是当顶点的最大值
+        left = self.helper(root.left)
+        right = self.helper(root.right)
+        passValue = max(0, left[0]+root.val, right[0] + root.val)
+        # maxPath = root.val + max(left[1]+right[1],0)
+        # 最大值有可能是 过这个点，也有可能是以前的某个点
+        maxPath = max (left[0]+right[0]+root.val, left[1], right[1])
+        return passValue,maxPath
 
-        left = self.maxPathHelper(root.left)
-        right = self.maxPathHelper(root.right)
-        maxpath = max(left[0], right[0], root.val + left[1] + right[1])
-        single = max(left[1] + root.val, right[1] + root.val, 0)
 
-        return maxpath, single
+
