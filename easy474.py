@@ -14,5 +14,22 @@ class Solution:
     @param: B: node in the tree
     @return: The lowest common ancestor of A and B
     """
+    # node, foundA,foundB = None, False, False
     def lowestCommonAncestorII(self, root, A, B):
-        # write your code here
+        if (not root) or (root == A) or ( root == B):
+            return root
+
+        root_left = self.lowestCommonAncestorII(root.left,A,B)
+        root_right = self.lowestCommonAncestorII(root.right,A,B)
+
+        if(root_left != None and root_right != None):
+            return root
+
+        if root_right != None:
+            return root_right
+
+        if root_left != None:
+            return root_left
+
+        return None
+
