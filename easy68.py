@@ -13,15 +13,15 @@ class Solution:
     """
     def postorderTraversal(self, root):
         # write your code here
-        if not root:
+        if root is None:
             return []
-        stack = deque[root]
+        stack = [root]
         result = []
         while stack:
             node = stack.pop()
             result.append(node.val)
-            if node.left:
-                stack.append(root.left)
-            if node.right:
-                stack.append(root.right)
+            if node.left is not None:
+                stack.append(node.left)
+            if node.right is not None:
+                stack.append(node.right)
         return result[::-1]
