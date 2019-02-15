@@ -11,18 +11,34 @@ class Solution:
     @param root: A Tree
     @return: Preorder in ArrayList which contains node values.
     """
+    # def preorderTraversal(self, root):
+    #     # write your code here
+    #     result = []
+    #     self.helper(root)
+    #     return result
+    #
+    # def helper(self, root):
+    #     if not root:
+    #         return
+    #     self.result.append(root.val)
+    #     self.helper(root.left)
+    #     self.helper(root.right)
     def preorderTraversal(self, root):
-        # write your code here
+        if not root:
+            return []
+        stack = [root]
         result = []
-        self.helper(root)
+        while stack:
+            curr_node = stack.pop()
+            result.append(curr_node.val)
+            #因为我们想先加左边的，所以就把右边的根先丢进去，然后再丢左边，其实一样，用deque可以选方向
+            if curr_node.right:
+                stack.append(curr_node.right)
+            if curr_node.left:
+                stack.append(curr_node.left)
+
         return result
 
-    def helper(self, root):
-        if not root:
-            return
-        self.result.append(root.val)
-        self.helper(root.left)
-        self.helper(root.right)
 
 
 
