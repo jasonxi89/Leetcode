@@ -351,4 +351,5 @@ Longest consecutive sequence path is 3-4-5, so return 3.
 解释:
 Longest consecutive sequence path is 2-3,not 3-2-1, so return 2.
 
-不知道为什么。。。1345不是= =！
+不知道为什么。。。1345不是！
+懂了。。因为数字不连续
