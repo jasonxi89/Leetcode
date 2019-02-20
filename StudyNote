@@ -36,5 +36,3 @@ return的东西要足够判断问题
 比较DFS/BFS:BFS的空间复杂度，取决于宽度；DFS的空间复杂度，取决于深度。
 
 PS:背诵Binary Tree iterator.
-
-看到视频41分钟

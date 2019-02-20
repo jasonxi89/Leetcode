@@ -38,11 +38,31 @@
 # print(s[0:s.find("b")])
 # s = s[0:s.find("b")]+"!"+s[s.find("b")+1:]
 #
-# print(s)
+# # print(s)
+#
+# re = [[1]] * 5
+# print(1 <= 1 < 3)
+#
+# n = 10
+# dic = {n:0 for n in range(n)}
+# print(dic)
 
-re = [[1]] * 5
-print(1 <= 1 < 3)
+class Solution:
+    """
+    @param str: The identifier need to be judged.
+    @return: Return if str is a legal identifier.
+    """
 
-n = 10
-dic = {n:0 for n in range(n)}
-print(dic)
+    def isLegalIdentifier(self, str):
+        # Write your code here.
+        if not str:
+            return False
+
+        if str[0].isdigit():
+            return False
+
+        for i in range(1, len(str) - 1):
+            if not (s[i].isalnum() or s[i] == "_"):
+                return False
+
+        return True
