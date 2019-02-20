@@ -47,22 +47,23 @@
 # dic = {n:0 for n in range(n)}
 # print(dic)
 
-class Solution:
-    """
-    @param str: The identifier need to be judged.
-    @return: Return if str is a legal identifier.
-    """
-
-    def isLegalIdentifier(self, str):
-        # Write your code here.
-        if not str:
-            return False
-
-        if str[0].isdigit():
-            return False
-
-        for i in range(1, len(str) - 1):
-            if not (s[i].isalnum() or s[i] == "_"):
-                return False
-
-        return True
+# class Solution:
+#     """
+#     @param str: The identifier need to be judged.
+#     @return: Return if str is a legal identifier.
+#     """
+#
+#     def isLegalIdentifier(self, str):
+#         # Write your code here.
+#         if not str:
+#             return False
+#
+#         if str[0].isdigit():
+#             return False
+#
+#         for i in range(1, len(str) - 1):
+#             if not (s[i].isalnum() or s[i] == "_"):
+#                 return False
+#
+#         return True
+print([i for i in range(1,10)])
