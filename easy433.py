@@ -1,59 +1,59 @@
-class Solution:
-    """
-    @param grid: a boolean 2D matrix
-    @return: an integer
-    433. 岛屿的个数
-    给一个01矩阵，求不同的岛屿的个数。
-
-    0代表海，1代表岛，如果两个1相邻，那么这两个1属于同一个岛。我们只考虑上下左右为相邻。
-
-    样例
-    在矩阵：
-
-    [
-      [1, 1, 0, 0, 0],
-      [0, 1, 0, 0, 1],
-      [0, 0, 0, 1, 1],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 1]
-    ]
-    中有 3 个岛.
-    """
-    def numIslands(self, grid):
-        # write your code here
-        counter = 0
-        def valpoint(grid,m,n):
-            return m < len(grid) and n < len(grid[0]) and m > -1 and n > -1
-
-
-        def helper(grid,m,n):
-            if valpoint(grid,m,n) != True or (grid [m][n] == 0) :
-                return
-            else:
-                grid [m][n] = 0
-                print("m,n被改了",m,n)
-                helper(grid, m + 1, n)
-                helper(grid, m - 1, n)
-                helper(grid, m, n + 1)
-                helper(grid, m, n - 1)
-
-        def printer(grid):
-            for m in range(len(grid)):
-                print(grid[m])
-            print("")
-
-
-
-        for m  in range(len(grid)):
-            for n in range(len(grid[0])):
-                print(m,n,grid[m][n])
-                if grid[m][n] == 1:
-                    printer(grid)
-                    print("我在坐标",m,n,"停下来了")
-                    counter += 1
-                    helper(grid,m,n)
-
-        return counter
+# class Solution:
+#     """
+#     @param grid: a boolean 2D matrix
+#     @return: an integer
+#     433. 岛屿的个数
+#     给一个01矩阵，求不同的岛屿的个数。
+#
+#     0代表海，1代表岛，如果两个1相邻，那么这两个1属于同一个岛。我们只考虑上下左右为相邻。
+#
+#     样例
+#     在矩阵：
+#
+#     [
+#       [1, 1, 0, 0, 0],
+#       [0, 1, 0, 0, 1],
+#       [0, 0, 0, 1, 1],
+#       [0, 0, 0, 0, 0],
+#       [0, 0, 0, 0, 1]
+#     ]
+#     中有 3 个岛.
+#     """
+    # def numIslands(self, grid):
+    #     # write your code here
+    #     counter = 0
+    #     def valpoint(grid,m,n):
+    #         return m < len(grid) and n < len(grid[0]) and m > -1 and n > -1
+    #
+    #
+    #     def helper(grid,m,n):
+    #         if valpoint(grid,m,n) != True or (grid [m][n] == 0) :
+    #             return
+    #         else:
+    #             grid [m][n] = 0
+    #             print("m,n被改了",m,n)
+    #             helper(grid, m + 1, n)
+    #             helper(grid, m - 1, n)
+    #             helper(grid, m, n + 1)
+    #             helper(grid, m, n - 1)
+    #
+    #     def printer(grid):
+    #         for m in range(len(grid)):
+    #             print(grid[m])
+    #         print("")
+    #
+    #
+    #
+    #     for m  in range(len(grid)):
+    #         for n in range(len(grid[0])):
+    #             print(m,n,grid[m][n])
+    #             if grid[m][n] == 1:
+    #                 printer(grid)
+    #                 print("我在坐标",m,n,"停下来了")
+    #                 counter += 1
+    #                 helper(grid,m,n)
+    #
+    #     return counter
 
         # from collections import deque
         #
@@ -91,6 +91,45 @@ class Solution:
         #     def is_valid(self, grid, x, y):
         #         n, m = len(grid), len(grid[0])
         #         return 0 <= x < n and 0 <= y < m and grid[x][y]
+
+class Solution:
+
+    def numIslands(self, grid):
+        # from collections
+        if not grid or not grid[0]:
+            return None
+        result = []
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j]:
+                    self.bfs(self,grid,i,j,result)
+        return result
+
+
+    def is_valid(self, grid, x, y):
+        n, m = len(grid), len(grid[0])
+        return 0 <= x < n and 0 <= y < m and grid[x][y]
+
+
+    def bfs(self,grid,x ,y,result):
+        queen = []
+        path = [(x,y)]
+        grid[x][y] = False
+        while queen:
+            x, y = queen.pop()
+            for delta_x, delta_y in [(1, 0), (0, -1), (-1, 0), (0, 1)]:
+                next_x = x + delta_x
+                next_y = y + delta_y
+                if not self.is_valid(grid,next_x,next_y):
+                    continue
+                queen.append((next_x,next_y))
+                if grid[next_x][next_y] == True:
+                    grid[next_x][next_y] = False
+                    path.append((x,y))
+
+        result.append(path)
+
+
 
 
 if __name__ =="__main__":
