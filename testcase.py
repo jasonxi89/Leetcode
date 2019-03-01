@@ -66,4 +66,18 @@
 #                 return False
 #
 #         return True
-print([i for i in range(1,10)])
+# print([i for i in range(1,10)])
+# print("abcd".rfind("e"))
+cut = "1+2+3-3+4+5"
+num = 0
+
+for i in range(len(cut) - 1, 0, -1):
+    if cut[i] == "+":
+        num += int(cut[i + 1:])
+        cut = cut[:i]
+    elif cut[i] == "-":
+        num -= int(cut[i + 1:])
+        cut = cut[:i]
+num += int(cut)
+
+print(num)
