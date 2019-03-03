@@ -109,29 +109,22 @@
 
 
 def dfs(path,input):
-    # if len(path) <= 1 and len(input) <=1:
-    #     return input[0]
-    # curr = input[-1]
-    # input.pop()
-    # for i in range(len(input)):
-    #     if curr[-3:] == input[i][0:3]:
-    #         input[i] = curr + input[i][3:]
-    #     elif curr[0:3] == input[i][-3:]:
-    #         input[i] += curr[3:]
-    # return dfs(input)
+    if len(input) <=1:
+        return input[0]
+    curr = input[-1]
+    input.pop()
+    for i in range(len(input)):
+        if curr[-3:] == input[i][0:3]:
+            input[i] = curr + input[i][3:]
+        elif curr[0:3] == input[i][-3:]:
+            input[i] += curr[3:]
+    return dfs(input)
 
 if __name__ == "__main__":
     # input = ['aaabbb', 'bbbaaa']
-    input = ['AGTGGGGGGGGG', 'AAACCCAATTT', 'TTTACACAGCT', 'GCTGGGCCCAGT']
-
-    print(dfs([],input))
-    # # input=['aaabbb','bbbaaa']
-    #
-    #
+    # input = ['AGTGGGGGGGGG', 'AAACCCAATTT', 'TTTACACAGCT', 'GCTGGGCCCAGT']
     # res = ''
     # dict1 ={}
-    #
-    # #predix是每个INPUT的后3个
     # predix = [i[-3:] for i in input]
     #
     #
@@ -141,16 +134,16 @@ if __name__ == "__main__":
     #         res = word
     #
     #
-    #
     # while dict1.get(res[-3:]) != None:
     #     temp  = res[-3:]
     #     res += dict1[res[-3:]]
-    #
     #     dict1.pop(temp)
     #
     #
     # print(res)
-
+    test = ["a","b","c"]
+    for lol in test:
+        print(lol)
 
 
 
