@@ -6,6 +6,8 @@ class Solution:
 
     0/1组成的数组，找到0的矩阵 ，一定是tectangle
     """
+
+
     def numIslands(slef,grid):
         if not grid or not grid[0]:
             return None
@@ -21,10 +23,20 @@ class Solution:
                     while x +1 < len(grid) and grid[x+1][y] == 0:
                         grid[x + 1][y] =1
                         x += 1
-
                     right_bot = [x,y]
-                    result.append("left top is" + str(left_top[0])+str(left_top[1]) + "right bot is" + str(right_bot))
+
+                    Solution.helper(Solution, grid,left_top,right_bot)
+
+
+                    result.append([left_top,right_bot])
         return result
+
+
+
+    def helper(self, grid, left_top,right_bot):
+        for i in range(left_top[0],right_bot[0]+1):
+            for j in range(left_top[1],right_bot[1]+1):
+                grid[i][j] =1
 
 
 

@@ -66,18 +66,94 @@
 #                 return False
 #
 #         return True
-# print([i for i in range(1,10)])
-# print("abcd".rfind("e"))
-cut = "1+2+3-3+4+5"
-num = 0
+# # print([i for i in range(1,10)])
+# # print("abcd".rfind("e"))
+# cut = "1+2+3-3+4+5"
+# num = 0
+#
+# for i in range(len(cut) - 1, 0, -1):
+#     if cut[i] == "+":
+#         num += int(cut[i + 1:])
+#         cut = cut[:i]
+#     elif cut[i] == "-":
+#         num -= int(cut[i + 1:])
+#         cut = cut[:i]
+# num += int(cut)
+#
+# print(num)
 
-for i in range(len(cut) - 1, 0, -1):
-    if cut[i] == "+":
-        num += int(cut[i + 1:])
-        cut = cut[:i]
-    elif cut[i] == "-":
-        num -= int(cut[i + 1:])
-        cut = cut[:i]
-num += int(cut)
 
-print(num)
+# input = ['aaabbb', 'bbbaaa']
+# res = ''
+# dict1 ={}
+
+# #predix是每个INPUT的后3个
+# predix = [i[-3:] for i in input]
+#
+#
+# for word in input:
+#     dict1[word[0:3]] = word[3:]
+#     if word[0:3] not in predix:
+#         res = word
+# if res != None:
+#     res = word
+#
+# while dict1.get(res[-3:]) != None:
+#     temp  = res[-3:]
+#     res += dict1[res[-3:]]
+#
+# print(res)
+#思路，递归，然后把东西丢进去
+# def questiontwo(input):
+#     result = []
+
+
+def dfs(path,input):
+    # if len(path) <= 1 and len(input) <=1:
+    #     return input[0]
+    # curr = input[-1]
+    # input.pop()
+    # for i in range(len(input)):
+    #     if curr[-3:] == input[i][0:3]:
+    #         input[i] = curr + input[i][3:]
+    #     elif curr[0:3] == input[i][-3:]:
+    #         input[i] += curr[3:]
+    # return dfs(input)
+
+if __name__ == "__main__":
+    # input = ['aaabbb', 'bbbaaa']
+    input = ['AGTGGGGGGGGG', 'AAACCCAATTT', 'TTTACACAGCT', 'GCTGGGCCCAGT']
+
+    print(dfs([],input))
+    # # input=['aaabbb','bbbaaa']
+    #
+    #
+    # res = ''
+    # dict1 ={}
+    #
+    # #predix是每个INPUT的后3个
+    # predix = [i[-3:] for i in input]
+    #
+    #
+    # for word in input:
+    #     dict1[word[0:3]] = word[3:]
+    #     if word[0:3] not in predix:
+    #         res = word
+    #
+    #
+    #
+    # while dict1.get(res[-3:]) != None:
+    #     temp  = res[-3:]
+    #     res += dict1[res[-3:]]
+    #
+    #     dict1.pop(temp)
+    #
+    #
+    # print(res)
+
+
+
+
+
+
+
