@@ -141,9 +141,12 @@ if __name__ == "__main__":
     #
     #
     # print(res)
-    test = ["a","b","c"]
-    for lol in test:
-        print(lol)
+    dict = {"a":1,"b":2,"d":5,"c":3}
+    dict1 = sorted(dict.keys())
+    print(type(dict))
+    print(type(dict1))
+
+
 
 
 
