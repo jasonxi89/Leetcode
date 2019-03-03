@@ -141,12 +141,20 @@ if __name__ == "__main__":
     #
     #
     # print(res)
-    dict = {"a":1,"b":2,"d":5,"c":3}
-    dict1 = sorted(dict.keys())
-    print(type(dict))
-    print(type(dict1))
-
-
+    # dict = {"a":1,"b":2,"d":5,"c":3}
+    from operator import itemgetter
+    # dict= [2,5,46,23,9,78]
+    # # dict1 = sorted(dict, key=lambda x:x[1])
+    # # dict1 = sorted(dict, key=itemgetter(1))
+    # dict2 = list(enumerate(dict))
+    # dict3 = sorted(dict2, key = lambda x:x[1])
+    # print(type(dict2))
+    # print(dict2)
+    # print(type(dict3))
+    # print(dict3)
+    # str = "i love you   you love me"
+    # print("-".join(str.split(" ")))
+    AAATTTGGGAAA
 
 
 
