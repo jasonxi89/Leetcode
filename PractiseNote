@@ -576,84 +576,6 @@ Medium 18. 子集 II
 #思路 和上面的一样啊，完全没难度，17和18的唯一差别就是，需要判断一下，是不是重复处理了某个元素（因为元素可以重复）
 
 
-LintCode-Logo
-主页
-算法
-人工智能
-CATnew
-VIP
-Language
-avatarsach1130
-返回
-1006. 子域名访问计数
-描述
-中文
-English
-诸如discuss.lintcode.com这样的域名由各种子域名构成。最顶层是com，下一层是lintcode.com，最底层是discuss.lintcode.com.当访问discuss.lintcode.com时，会隐式访问子域名lintcode.com和com.
-
-现给出域名的访问计数格式为“空格 地址”。 示例：9001 discuss.lintcode.com.
-
-给出计数列表cpdomains. 返回每个子域名（包含父域名）的访问次数（与输入格式相同，顺序任意）.
-
-cpdomains的长度不超过100.
-每个域名的长度不超过100.
-会有1到2个.包含在每个域名中.
-任何域名的访问计数都不会超过10000.
-返回结果的条目顺序随意.
-您在真实的面试中是否遇到过这个题？
-样例
-样例 1:
-
-输入：
-["9001 discuss.lintcode.com"]
-输出：
-["9001 discuss.lintcode.com", "9001 lintcode.com", "9001 com"]
-解释：
-只有一个域名："discuss.lintcode.com". 如题所述，
-子域名"lintcode.com"和"com"也会被访问. 所以一共要访问9001次.
-样例 2:
-
-输入：
-["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"]
-输出：
-["901 mail.com","50 yahoo.com","900 google.mail.com","5 wiki.org","5 org","1 intel.mail.com","951 com"]
-解释：
-一共访问900次"google.mail.com"，50次"yahoo.com"，1次"intel.mail.com"，5次"wiki.org".
-对于所有的子域名，会访问 900 + 1 = 901 次"mail.com"，900 + 50 + 1 = 951 次"com"，5次"org".
-难度简单
-总通过258
-总提交359
-通过率71%
- 查看标签
- 公司
-排行榜 - Java
-
-summer377
-312ms
-
-Green077
-326ms
-
--_-Y
-328ms
-
-_Jack_
-328ms
-
-hsh3140915
-329ms
-笔记
-String [] domains = domain.split("\\."); “ * ^ : | . \”
-avatarGreen077
-创建于 1 个月前
-https://stackoverflow.com/questions/14833008/java-string-split-with-dot split dot \\. for(Map.Entry<String, Integer> e: map.entrySet()){ result.add(e.getValue() + " " + e.getKey()); }
-avatarxuanxuan01
-创建于 1 个月前
-split方法在分隔 “ * ^ : | . \”的时候需要特殊处理，通过\\.来转义
-avatarfeel.free
-创建于 2 个月前
-讨论
-cnkyzz · 最后回复来自 · cnkyzz · 6 个月前
   
 Easy 1006. 子域名访问计数
 中文English
@@ -708,3 +630,7 @@ Hard 978. 基础计算器
 
 
 #如何来搞一个计算器，最简单的，开始读数字，如果当前
+
+AAACCCAATTTACACAGCTGGGCCCAGTGGGGGGGGG
+
+AGTGGGGGGGGG AAACCCAATTT TTTACACAGCT GCTGGGCCCAGT
