@@ -154,7 +154,17 @@ if __name__ == "__main__":
     # print(dict3)
     # str = "i love you   you love me"
     # print("-".join(str.split(" ")))
-    AAATTTGGGAAA
+    str = "TTTAAATTTGGGAAA"
+    map_dic = {"AAA":"A","TTT":"T","GGG":"G"}
+    from collections import Counter
+    freq = Counter()
+    for i in range(0,len(str),3):
+        if str[i:i+3] in map_dic:
+            freq[str[i:i+3]] += 1
+    # print(sorted(freq.items,key=lambda freq:freq[0]))
+    print(freq)
+    freq = sorted(freq.items(),key=lambda  x:x[0])
+    print(freq)
 
 
 
