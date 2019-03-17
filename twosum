@@ -1,0 +1,23 @@
+class Solution:
+    """
+    @param a: the first list
+    @param b: the second list
+    @param x: the max sum
+    @return: the pairs whose sum are not exceed x
+    """
+    def getAns(self, a, b, x):
+        # Write your code here.
+        import bisect
+        from collections import defaultdict
+        max_pair = defaultdict(list)
+        diff = sys.maxsize
+        a = set(a)
+        b.sort()
+        for num_a in a:
+            i = bisect.bisect(b,x-num_a)-1
+            if i == -1:
+                continue
+            if x-(num_a+b[i]) <= diff:
+                diff =  x-(num_a+b[i])
+                max_pair[diff].append([num_a, b[i]])
+        return sorted(max_pair[diff])
