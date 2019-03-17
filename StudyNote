@@ -37,8 +37,26 @@ return的东西要足够判断问题
 
 PS:背诵Binary Tree iterator.
 
-R语言
-x <− rnorm (100 ,mean = 5 ,sd = 0 . 1 )
-mean(x)
-sd(x)
-summary(x)
+排列/组合问题:
+1.子集，就传数字
+2.全子集（有顺序），传visited数组
+
+找路径问题基本都要回溯，找点的反而不用
+
+记忆化一般只能记忆化字符串/数字表示的，如果是个数组或者类似的，记忆化无缘
+
+O(答案总数 * 构造每个答案的时间)
+
+LRU cache: Least Rencently used
+LFU cache: Least Frequently used
+
+LinkedList + dict  = queue
+
+一个字典：dic = {}
+dic[0]报错
+dic.get(0,1) 输出1
+
+
+
+Word 4兄弟
+Word Break, Word Ladder, Word Search, Word Pattern
