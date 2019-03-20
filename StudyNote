@@ -56,7 +56,40 @@ LinkedList + dict  = queue
 dic[0]报错
 dic.get(0,1) 输出1
 
+Top K:
+1.Quick Select -> offline O(n)
+2.heap -> online
+heap原理: 原理是2叉树，从小到大
+heap用法:
+  li = [1,3,5,6,7]
+  li1 = [1,3,5,6,7]
+  #merge 组合2个有序list
+  test = list(heapq.merge(li1,li))
+  #打印第九个
+  print(test[9])
+  #数组堆化
+  heapq.heapify(li)
+  #往heapq里丢0
+  heapq.heappush(li,0)
+  #取heapq里最大的2个数组(不重复)
+  print(heapq.nlargest(2,li))
+  print(list(li))
+  #pop出来最小的，并且增加另一个值
+  heapq.heappushpop(li,10)
+  #最小的值剔除，并且增加新值
+  heapq.heapreplace(li,10)
+  print(list(li))
+  print(hq)
 
+  所以，尾递归是把变化的参数传递给递归函数的变量了。怎么写尾递归？形式上只要最后一个return语句是单纯函数就可以。
+  尾递归最重要的是从一个子问题，推导出来另一个子问题
+
+  BFS使用队列, DFS使用栈
+
+  动态规划：最大值，最小值，可行性，方案总数
+  换句话说：最优子结构，边界，状态转移方程
+
+  递归的时候传值就用return，或者强行count[0]变成数组
 
 Word 4兄弟
 Word Break, Word Ladder, Word Search, Word Pattern
