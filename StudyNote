@@ -91,5 +91,12 @@ heap用法:
 
   递归的时候传值就用return，或者强行count[0]变成数组
 
+动态规划4要素：
+1.状态 State : 最优解/Max/Min, Yes/No, Count(*)
+2.方程 Function : 状态之间的联系，怎么通过小的状态，来求得大的状态
+3.初始化 Intialization : 最极限的小状态是什么, 起点
+4.答案 Answer : 最大的那个状态是什么，终点
+
+
 Word 4兄弟
 Word Break, Word Ladder, Word Search, Word Pattern
